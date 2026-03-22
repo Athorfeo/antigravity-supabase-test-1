@@ -1,0 +1,19 @@
+# apphosting.yaml
+# Configuración para inyectar variables en el entorno de build y ejecución de Firebase App Hosting
+
+env:
+  - variable: NEXT_PUBLIC_SUPABASE_URL
+    value: "https://fcyeqbdbkqpxakztzalv.supabase.co"
+    availability:
+      - BUILD
+      - RUNTIME
+      
+  - variable: NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+    value: "sb_publishable_uZRfCzy369sLM6pkclqbuQ_y0E7GSIr"
+    availability:
+      - BUILD
+      - RUNTIME
+
+# Nota: La clave 'SUPABASE_SECRET_KEY' nunca debe colocarse aquí en texto plano.
+# Si en el futuro necesitas usarla, deberás configurar Google Cloud Secret Manager mediante:
+# firebase apphosting:secrets:set SUPABASE_SECRET_KEY
